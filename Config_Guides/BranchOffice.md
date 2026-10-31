@@ -12,7 +12,9 @@ Branch offices at Packet Slinger Networks consist of the following:
 - 10 x Workstations
 
 ## Configuration
-### VLANs
+### 1. Base Configuration
+
+### 2. VLANs
 Branch offices at Packet Slinger Networks have the following VLAN design:
 - VLAN 10 (Management Network)
 - VLAN 20 (Corporate Network)
@@ -93,3 +95,9 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if)# switchport trunk allowed vlans 10,20
     BO-SW02(config-if)# switchport trunk native vlan 10
     ```
+
+### 3. Router On a Stick
+
+### 4. Switchport Hardening
+
+### 5. Configure NAT Overload for Internet Access
