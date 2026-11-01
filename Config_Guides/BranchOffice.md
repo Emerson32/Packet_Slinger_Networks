@@ -118,8 +118,28 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if)# switchport trunk native vlan 10
     ```
 
-### 3. Router On a Stick
+### 3. Switchport Hardening
 
-### 4. Switchport Hardening
+### 4. Router On a Stick
+
+1. Configure router subinterfaces for each VLAN
+
+    **BO-RT01**
+    ```cisco
+    BO-RT01> enable
+    BO-RT01# configure terminal
+    BO-RT01(config)# interface gi0/1
+    BO-RT01(config-if)# no shutdown
+    BO-RT01(config-if)# exit
+    BO-RT01(config)# interface gi0/1.10
+    BO-RT01(config-if)# encapsulation dot1q 10
+    BO-RT01(config-if)# ip address 10.0.20.1 255.255.255.224
+    BO-RT01(config-if)# exit
+    BO-RT01(config)# interface gi0/1.20
+    BO-RT01(config-if)# encapsulation dot1q 20
+    BO-RT01(config-if)# ip address 10.0.20.1 255.255.255.224
+      ```
+
+2. Configure DHCP scopes
 
 ### 5. Configure NAT Overload for Internet Access
