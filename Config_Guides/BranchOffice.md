@@ -16,8 +16,8 @@ Branch offices at Packet Slinger Networks consist of the following:
 
 ### 2. VLANs
 Branch offices at Packet Slinger Networks have the following VLAN design:
-- VLAN 10 (Management Network)
-- VLAN 20 (Corporate Network)
+- VLAN 10 (Management Network) - 10.0.20.0/27
+- VLAN 20 (Corporate Network) -  10.0.20.32/27
 
 1. Create VLANs on both switches
 
@@ -41,7 +41,29 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config)# description CORPORATE
     ```
 
-2. Add VLANs to switch trunks
+2. Create SVI management interface on VLAN 10
+
+**BO-SW01**
+```cisco
+BO-SW01# configure terminal
+BO-SW01(config)# interface vlan 10
+BO-SW01(config-if)# ip address 10.0.20.2 255.255.255.224
+BO-SW01(config-if)# no shut
+BO-SW01(config-if)# exit
+BO-SW01(config)# ip default-gateway 10.0.20.1
+```
+
+**BO-SW02**
+```cisco
+BO-SW01# configure teminal
+BO-SW01(config)# interface vlan 10
+BO-SW01(config-if)# ip address 10.0.20.3 255.255.255.224
+BO-SW01(config-if)# no shut
+BO-SW01(config-if)# exit
+BO-SW01(config)# ip default-gateway 10.0.20.1
+```
+
+3. Add VLANs to switch trunks
 
     **BO-SW01**
     ```cisco
@@ -63,7 +85,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if)# exit
     ```
 
-3. Assign ports 5-9 to VLAN 20 on both switches
+4. Assign ports 5-9 to VLAN 20 on both switches
 
     **BO-SW01**
     ```cisco
@@ -79,7 +101,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if-range)# switchport access vlan 20
     ```
 
-4. Configure VLAN Trunks for WAPs
+5. Configure VLAN Trunks for WAPs
 
     **BO-SW01**
     ```cisco
