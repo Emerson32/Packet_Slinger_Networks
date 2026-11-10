@@ -1,13 +1,13 @@
-# Packet Slinger Networks RFP
+# Packet Slinger Distribution Networks RFP
 
 ## Company Overview
-Packet Slinger Networks is a fictitious Network Consultancy Services Provider that specializes in designing, auditing, and implementing network solutions for its SMB and residential customers. PSN is your friendly-neihgborhood network specialist - handling anything from Wi-Fi coverage assessments to office network builds.
+Packet Slinger Distribution Networks (PSDN) is a fictitious distribution company that specializes in comic-book distribution to international resellers. PSN is your friendly-neihgborhood distribution specialist - handling all your comic book supply needs.
 
 ## Project Overview
-The objective of this Request for Proposal (RFP) is obtain proposals for the design and implementation of an adaptible and robust network infrastructure for Packet Slinger Networks' HQ office, 10 Regional Offices, and a total of 50 Branch offices. The network should implement industry-standard best practices and have room for potential growth. 
+The objective of this Request for Proposal (RFP) is to obtain proposals for the design and implementation of an adaptible and robust network infrastructure for the PSDN Headquarters office, 10 Regional Offices, and a total of 50 Branch offices. The network should implement industry-standard best practices and have room for potential growth. 
 
 ## Project Goals
-1. Design an adaptable in robust network that can support the needs of Packet Slinger Networks:
+1. Design an adaptable and robust network that can support the needs of PSDN:
     - Headquarters Office (Staff size: ~200)
     - Regional Offices (Staff size: ~50)
     - Remote Branch Office (Staff size: ~10)
