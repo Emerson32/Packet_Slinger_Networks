@@ -27,8 +27,8 @@ The objective of this Request for Proposal (RFP) is to obtain proposals for the 
 
 ## Project Scope of Work
 The project requires the following tasks be completed:
-1. Design of a new and improved network infrastructure (includes switches, routers, firewalls, and wireless access points)
-2. Implementation and configuration of an IPv4 addressing scheme, routing protocols, segmented networks.
-3. Installation and configuration of wireless connectivity.
-4. Implementation of applicable network security measures and best practice.
-5. Utilizing network automation to streamline network deployments for customers.
+  1. Design of a new and improved network infrastructure (includes switches, routers, firewalls, and wireless access points)
+  2. Implementation and configuration of an IPv4 addressing scheme, routing protocols, segmented networks.
+  3. Installation and configuration of wireless connectivity.
+  4. Implementation of applicable network security measures and best practice.
+  5. Utilizing network automation to streamline network deployments for customers.
