@@ -29,7 +29,7 @@ BO1-SW01(config-line)# line vty 0 4
 BO1-SW01(config-line)# login local
 BO1-SW01(config-line)# transport input ssh
 BO1-SW01(config-line)# logging synchronous
-BO1-SW01(config-line)# line vty 0 15 
+BO1-SW01(config-line)# line vty 5 15 
 BO1-SW01(config-line)# login local
 BO1-SW01(config-line)# transport input ssh
 BO1-SW01(config-line)# logging syncrhonous
