@@ -82,7 +82,14 @@ BO1-SW01(config-if)# switchport access vlan 10
 BO1-SW01(config-if)# exit
 ```
 
-### 7. Port Descriptions
+### 7. Configure SSH
+```cisco
+BO1-SW01(config)# ip domain-name psdn.local
+BO1-SW01(config)# crypto key generate rsa modulus 4096
+BO1-SW01(config)# ip ssh version 2
+```
+
+### 8. Port Descriptions
 
 ```cisco
 BO1-SW01(config)# inter 1/1/<LAST_PORT_NUM>
@@ -90,7 +97,7 @@ BO1-SW01(config-if)# description MANAGEMENT_PORT
 BO1-SW01(config-if)# exit
 ```
 
-### 8. Save Config
+### 9. Save Config
 
 ```cisco
 BO1-SW01(config)# end
