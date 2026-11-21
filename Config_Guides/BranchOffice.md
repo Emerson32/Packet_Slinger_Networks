@@ -23,7 +23,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     ```cisco
     BO-SW01(config)# interface gi0/2
     BO-SW01(config-if)# switchport mode trunk
-    BO-SW01(config-if)# switchport trunk allowed vlan 10,20
+    BO-SW01(config-if)# switchport trunk allowed vlan 10,20,30,40
     BO-SW01(config-if)# switchport trunk native vlan 10
     BO-SW01(config-if)# exit
     ```
@@ -32,7 +32,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     ```cisco
     BO-SW02(config)# interface gi0/2
     BO-SW02(config-if)# switchport mode trunk
-    BO-SW02(config-if)# switchport trunk allowed vlan 10,20
+    BO-SW02(config-if)# switchport trunk allowed vlan 10,20,30,40
     BO-SW02(config-if)# switchport trunk native vlan 10
     BO-SW02(config-if)# exit
     ```
