@@ -46,6 +46,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW01(config)# interface range gi0/5-9
     BO-SW01(config-if-range)# switchport mode access
     BO-SW01(config-if-range)# switchport access vlan 20
+    BO-SW01(config-if-range)# description CORPORATE_ACCESS
     ```
 
     **BO-SW02**
@@ -53,6 +54,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config)# interface range gi0/5-9
     BO-SW02(config-if-range)# switchport mode access
     BO-SW02(config-if-range)# switchport access vlan 20
+    BO-SW02(config-if-range)# description CORPORATE_ACCESS
     ```
 
 3. Configure VLAN Trunks for WAPs
