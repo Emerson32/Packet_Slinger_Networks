@@ -76,55 +76,58 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if)# switchport trunk native vlan 20
     ```
 
-### 2. Switchport Hardening
+4. Assign ports 10-14 to VLAN 30 on both switches
+
+5. Assign ports 15-16 to VLAN 40 on both switches
+
 
 ### 3. Router On a Stick
 
 1. Configure router subinterfaces for each VLAN
 
-    **BO-RT01**
+    **BO-RTR01**
     ```cisco
-    BO-RT01> enable
-    BO-RT01# configure terminal
-    BO-RT01(config)# interface gi0/1.10
-    BO-RT01(config-if)# encapsulation dot1q 10
-    BO-RT01(config-if)# ip address 10.0.20.1 255.255.255.224
-    BO-RT01(config-if)# exit
-    BO-RT01(config)# interface gi0/1.20
-    BO-RT01(config-if)# encapsulation dot1q 20
-    BO-RT01(config-if)# ip address 10.0.20.33 255.255.255.224
-    BO-RT01(config-if)# exit
+    BO-RTR01> enable
+    BO-RTR01# configure terminal
+    BO-RTR01(config)# interface gi0/1.10
+    BO-RTR01(config-if)# encapsulation dot1q 10
+    BO-RTR01(config-if)# ip address 10.0.20.1 255.255.255.224
+    BO-RTR01(config-if)# exit
+    BO-RTR01(config)# interface gi0/1.20
+    BO-RTR01(config-if)# encapsulation dot1q 20
+    BO-RTR01(config-if)# ip address 10.0.20.33 255.255.255.224
+    BO-RTR01(config-if)# exit
       ```
 
 2. Configure DHCP scopes and then enable the router interface
 
-    **BO-RT01**
+    **BO-RTR01**
     ```cisco
     ! Define DCHP Pool for the Managment network
-    BO-RT01(config)# ip dhcp pool MANAGEMENT-10
-    BO-RT01(dhcp-config)# network 10.0.20.0 255.255.255.224
-    BO-RT01(dhcp-config)# default-router 10.0.20.1
-    BO-RT01(dhcp-config)# domain-name packetslinger.local
-    BO-RT01(dhcp-config)# dns-server 8.8.8.8
-    BO-RT01(dhcp-config)# exit
+    BO-RTR01(config)# ip dhcp pool MANAGEMENT-10
+    BO-RTR01(dhcp-config)# network 10.0.20.0 255.255.255.224
+    BO-RTR01(dhcp-config)# default-router 10.0.20.1
+    BO-RTR01(dhcp-config)# domain-name packetslinger.local
+    BO-RTR01(dhcp-config)# dns-server 8.8.8.8
+    BO-RTR01(dhcp-config)# exit
 
     ! Define DHCP pool for the Corporate network
-    BO-RT01(config)# ip dhcp pool CORPORATE-20
-    BO-RT01(dhcp-config)# network 10.0.20.32 255.255.255.224
-    BO-RT01(dhcp-config)# default-router 10.0.20.33
-    BO-RT01(dhcp-config)# domain-name packetslinger.local
-    BO-RT01(dhcp-config)# dns-server 8.8.8.8
-    BO-RT01(dhcp-config)# exit
+    BO-RTR01(config)# ip dhcp pool CORPORATE-20
+    BO-RTR01(dhcp-config)# network 10.0.20.32 255.255.255.224
+    BO-RTR01(dhcp-config)# default-router 10.0.20.33
+    BO-RTR01(dhcp-config)# domain-name packetslinger.local
+    BO-RTR01(dhcp-config)# dns-server 8.8.8.8
+    BO-RTR01(dhcp-config)# exit
 
     !Define DHCP exclusions
     BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.1 10.0.20.5
     BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.33
 
     !Best Practice: Now enable the router interface to avoid DHCP Binding issues
-    BO-RT01(config)# inter gi0/1
-    BO-RT01(config-if)# no shut
-    BO-RT01(config-if)# end
-    BO-RT01# wr
+    BO-RTR01(config)# inter gi0/1
+    BO-RTR01(config-if)# no shut
+    BO-RTR01(config-if)# end
+    BO-RTR01# wr
     ```
 
 ### 4. Configure NAT Overload for Internet Access
