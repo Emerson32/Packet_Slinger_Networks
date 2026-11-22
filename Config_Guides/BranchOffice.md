@@ -97,6 +97,14 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-RTR01(config-if)# encapsulation dot1q 20
     BO-RTR01(config-if)# ip address 10.0.20.33 255.255.255.224
     BO-RTR01(config-if)# exit
+    BO-RTR01(config)# interface gi0/0/1.30
+    BO-RTR01(config-if)# encapsulation dot1q 30
+    BO-RTR01(config-if)# ip address 10.0.20.64 255.255.255.224
+    BO-RTR01(config-if)# exit
+    BO-RTR01(config)# interface gi0/0/1.40
+    BO-RTR01(config-if)# encapsulation dot1q 40
+    BO-RTR01(config-if)# ip address 10.0.20.96 255.255.255.224
+    BO-RTR01(config-if)# exit
       ```
 
 2. Configure DHCP scopes and then enable the router interface
