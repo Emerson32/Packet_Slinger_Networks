@@ -164,9 +164,27 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-RTR01(dhcp-config)# dns-server 8.8.8.8
     BO-RTR01(dhcp-config)# exit
 
+    ! Define DHCP pool for the VOIP network
+    BO-RTR01(config)# ip dhcp pool VOIP-30
+    BO-RTR01(dhcp-config)# network 10.0.20.64 255.255.255.224
+    BO-RTR01(dhcp-config)# default-router 10.0.20.65
+    BO-RTR01(dhcp-config)# domain-name packetslinger.local
+    BO-RTR01(dhcp-config)# dns-server 8.8.8.8
+    BO-RTR01(dhcp-config)# exit
+
+    ! Define DHCP pool for the Security network
+    BO-RTR01(config)# ip dhcp pool SECURITY-40
+    BO-RTR01(dhcp-config)# network 10.0.20.96 255.255.255.224
+    BO-RTR01(dhcp-config)# default-router 10.0.20.97
+    BO-RTR01(dhcp-config)# domain-name packetslinger.local
+    BO-RTR01(dhcp-config)# dns-server 8.8.8.8
+    BO-RTR01(dhcp-config)# exit
+
     !Define DHCP exclusions
     BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.1 10.0.20.5
     BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.33
+    BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.65
+    BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.97
 
     !Best Practice: Now enable the router interface to avoid DHCP Binding issues
     BO-RTR01(config)# inter gi0/1
