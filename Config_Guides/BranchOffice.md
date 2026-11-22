@@ -80,8 +80,39 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
 
 4. Assign ports 10-14 to VLAN 30 on both switches
 
+    **BO-SW01**
+    ```cisco
+    BO-SW01(config)# interface range gi0/10-14
+    BO-SW01(config-if-range)# description VOIP_ACCESS
+    BO-SW01(config-if-range)# switchport mode access
+    BO-SW01(config-if-range)# switchport access vlan 30
+    ```
+
+    **BO-SW02**
+    ```cisco
+    BO-SW02(config)# interface range gi0/10-14
+    BO-SW02(config-if-range)# description VOIP_ACCESS
+    BO-SW02(config-if-range)# switchport mode access
+    BO-SW02(config-if-range)# switchport access vlan 30
+    ```
+
 5. Assign ports 15-16 to VLAN 40 on both switches
 
+    **BO-SW01**
+    ```cisco
+    BO-SW01(config)# interface range gi0/15-16
+    BO-SW01(config-if-range)# description SECURITY_ACCESS
+    BO-SW01(config-if-range)# switchport mode access
+    BO-SW01(config-if-range)# switchport access vlan 40
+    ```
+
+    **BO-SW02**
+    ```cisco
+    BO-SW02(config)# interface range gi0/15-16
+    BO-SW02(config-if-range)# description SECURITY_ACCESS
+    BO-SW02(config-if-range)# switchport mode access
+    BO-SW02(config-if-range)# switchport access vlan 40
+    ```
 
 ### 3. Router On a Stick
 
