@@ -89,11 +89,11 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     ```cisco
     BO-RTR01> enable
     BO-RTR01# configure terminal
-    BO-RTR01(config)# interface gi0/1.10
+    BO-RTR01(config)# interface gi0/0/1.10
     BO-RTR01(config-if)# encapsulation dot1q 10
     BO-RTR01(config-if)# ip address 10.0.20.1 255.255.255.224
     BO-RTR01(config-if)# exit
-    BO-RTR01(config)# interface gi0/1.20
+    BO-RTR01(config)# interface gi0/0/1.20
     BO-RTR01(config-if)# encapsulation dot1q 20
     BO-RTR01(config-if)# ip address 10.0.20.33 255.255.255.224
     BO-RTR01(config-if)# exit
