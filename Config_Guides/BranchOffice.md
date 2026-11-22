@@ -16,6 +16,8 @@ Branch offices at Packet Slinger Networks consist of the following:
 Branch offices at Packet Slinger Networks have the following VLAN design:
 - VLAN 10 (Management Network) - 10.0.20.0/27
 - VLAN 20 (Corporate Network) -  10.0.20.32/27
+- VLAN 30 (VOIP/Phones Network) - 10.0.20.64/24
+- VLAN 40 (SECURITY Network) - 10.0.20.96/27
 
 1. Add VLANs to switch trunks
 
