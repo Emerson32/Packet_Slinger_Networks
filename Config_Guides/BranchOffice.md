@@ -187,10 +187,60 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-RTO1(config)# ip dhcp excluded-addresses 10.0.20.97
 
     !Best Practice: Now enable the router interface to avoid DHCP Binding issues
-    BO-RTR01(config)# inter gi0/1
+    BO-RTR01(config)# inter gi0/0/1
     BO-RTR01(config-if)# no shut
     BO-RTR01(config-if)# end
     BO-RTR01# wr
     ```
 
-### 4. Configure NAT Overload for Internet Access
+### 4. Configure NAT Overload and Default Route for Internet Access
+
+1. Configure Branch Office Router WAN Interface
+    **BO-RTR01**
+    ```cisco
+    BO-RTR01# conf t
+    BO-RTR01(config)# inter gi0/0/0
+    BO-RTR01(config-if)# description WAN_LINK
+    BO-RTR01(config-if)# ip add <ISP_ROUTERIP> <NETMASK>
+    BO-RTR01(config-if)# end
+    ```
+
+2. Configure NAT Overload
+
+    **BO-RTR01**
+    ```cisco
+    BO-RTR01# conf t
+    ! Define IP Access List for NAT-capable networks
+    BO-RTR01(config)# ip access-list standard INTERNET_NAT
+    BO-RTR01(config-std-nacl)# permit 10.0.20.0 0.0.0.31
+    BO-RTR01(config-std-nacl)# permit 10.0.20.32 0.0.0.31
+    BO-RTR01(config-std-nacl)# permit 10.0.20.64 0.0.0.31
+    BO-RTR01(config-std-nacl)# permit 10.0.20.96 0.0.0.31
+    BO-RTR01(config-std-nacl)# exit
+
+    ! Configure NAT using access list
+    BO-RTR01(config)# ip nat inside source list INTERNET_NAT interface gi0/0/0 overload
+
+    ! Define WAN interface as the NAT outside interface
+    BO-RTR01(config)# inter gi0/0/0
+    BO-RTR01(config-if)# nat outside
+
+    ! Define each LAN sub-interface as a NAT inside interface
+    BO-RTR01(config)# inter gi0/0/1.10
+    BO-RTR01(config-if)# nat inside
+    BO-RTR01(config-if)# inter gi0/0/1.20
+    BO-RTR01(config-if)# nat inside
+    BO-RTR01(config-if)# inter gi0/0/1.30
+    BO-RTR01(config-if)# nat inside
+    BO-RTR01(config-if)# inter gi0/0/1.40
+    BO-RTR01(config-if)# nat inside
+    BO-RTR01(config-if)# end
+    ```
+
+3. Configure Default Static Route
+
+    **BO-RTR01**
+    ```cisco
+    BO-RTR01# conf t
+    BO-RTR01(config)# ip route 0.0.0.0 0.0.0.0 <ISP_ROUTERIP>
+    ```
