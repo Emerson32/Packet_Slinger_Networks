@@ -73,18 +73,17 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+You can use the Packet Tracer lab files described below to recreate this network on your own local computer.
 
 <!-- Configuration Guides -->
 ### Configuration Guides
+The configuration guides walk you through the step-by-step procedure for building each piece of the network infrastructure.
 
-Explain your configuration guides and how they are structured.
-* cisco
-  ```sh
-  file structure here
-  
-  ```
+The guides are organized in a sequential order; however, feel free to jump around for the particular network technolociges you are interested in implementing.
+
+#### Configuration Guides
+
+- [Branch Office](./Config_Guides/BranchOffice)
 
 <!-- Lab Files -->
 ### Lab Files
