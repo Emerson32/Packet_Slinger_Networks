@@ -114,7 +114,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-SW02(config-if-range)# switchport access vlan 40
     ```
 
-### 3. Router On a Stick
+### 2. Router On a Stick
 
 1. Configure router subinterfaces for each VLAN
 
@@ -193,7 +193,7 @@ Branch offices at Packet Slinger Networks have the following VLAN design:
     BO-RTR01# wr
     ```
 
-### 4. Configure NAT Overload and Default Route for Internet Access
+### 3. Configure NAT Overload and Default Route for Internet Access
 
 1. Configure Branch Office Router WAN Interface
     **BO-RTR01**
