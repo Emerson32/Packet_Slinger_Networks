@@ -73,7 +73,7 @@ Here's a blank template to get started. To avoid retyping too much info, do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You can use the Packet Tracer lab files described below to recreate this network on your own local computer.
+You can use the <a href="#configuration-guides">Configuration Guides</a> to practice implementing the various technologies or you can use the <a href="#lab-files">Lab Files</a> to easily replicate each lab and intentionally break the config and practice troubleshooting.
 
 <!-- Configuration Guides -->
 ### Configuration Guides
@@ -81,19 +81,18 @@ The configuration guides walk you through the step-by-step procedure for buildin
 
 The guides are organized in a sequential order; however, feel free to jump around for the particular network technolociges you are interested in implementing.
 
-#### Configuration Guides
-
+The configuration guides are layed out as follows:
 - [Branch Office](./Config_Guides/BranchOffice)
 
 <!-- Lab Files -->
 ### Lab Files
 
-Explain the lab files available and how users can replicate the environment for themselves.
-
+To easily replicate the labs, run the following in your terminal:
 ```sh
-git clone https://github.com/github_username/repo_name
-cd LabFiles
+git clone https://github.com/Emerson32/Packet_Slinger_Networks.git
 ```
+
+Open the LabFiles directory within [Packet Tracer](https://www.netacad.com/packet-tracer-download).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
